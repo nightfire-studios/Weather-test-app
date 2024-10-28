@@ -10,8 +10,17 @@ app.get('/message', (req, res) => {
     res.send('Hello World');
 });
 
-// Serve static files from the 'dist' folder (where Parcel will build the app)
-app.use(express.static(path.join(__dirname, '../dist')));
+// Determine and log the path to the 'dist' folder
+const distPath = path.join(__dirname, '../dist');
+console.log('Serving static files from:', distPath);
+
+app.use(express.static(distPath));
+
+// Add a route to verify the server is running
+app.get('/', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
