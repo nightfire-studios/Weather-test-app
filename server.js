@@ -11,7 +11,7 @@ app.get('/message', (req, res) => {
 });
 
 // Determine and log the path to the 'dist' folder
-const distPath = path.join(__dirname, 'dist');
+const distPath = path.join(__dirname, 'public');
 console.log('serving static files from:', distPath);
 
 app.use(express.static(distPath));
