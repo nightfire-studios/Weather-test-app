@@ -1,0 +1,2 @@
+const e="https://myfirstdeploy-bjg3hkbxehdkffck.southafricanorth-01.azurewebsites.net/";async function t(){try{let t=await fetch(`${e}/message`);if(t.ok){let e=await t.text();document.getElementById("message").innerText=e}else throw Error("Network response was not ok.")}catch(e){console.error("Error fetching message:",e),document.getElementById("message").innerText="Error fetching message."}}console.log(e),document.getElementById("fetchButton").addEventListener("click",t);
+//# sourceMappingURL=index.d5c9f818.js.map
