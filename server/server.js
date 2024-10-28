@@ -11,7 +11,7 @@ app.get('/message', (req, res) => {
 });
 
 // Serve static files from the 'dist' folder (where Parcel will build the app)
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
